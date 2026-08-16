@@ -1,43 +1,165 @@
-body{
-  background-color: rgb(25,25,25);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #292929, #111);
   font-family: Arial, Helvetica, sans-serif;
-  
-}
-h1{
   color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 15px;
 }
-p{
-  color: white;
+
+/* Game Title */
+h2 {
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
-.css-button{
-  background-color: transparent;
+
+/* Game Buttons */
+.css-button {
+  width: 140px;
+  height: 140px;
+
+  background: rgba(255, 255, 255, 0.05);
   border: 3px solid white;
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
-  margin-right: 20px;
+  border-radius: 50%;
+
+  margin: 10px;
+  padding: 12px;
+
   cursor: pointer;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s ease;
 }
-.image-height{
+
+/* Hover Effect */
+.css-button:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+}
+
+/* Click Effect */
+.css-button:active {
+  transform: scale(0.92);
+}
+
+/* Images */
+.image-height {
+  width: 105px;
   height: 105px;
-  border-radius: 60px;
-  background-color: transparent;
-  
+
+  object-fit: contain;
+  border-radius: 50%;
 }
-.js-result{
-  font-size: 25px;
+
+/* Result */
+.js-result {
+  min-height: 35px;
+
+  margin-top: 45px;
+  margin-bottom: 15px;
+
+  font-size: 28px;
   font-weight: bold;
-  margin-top: 50px;
+  text-align: center;
+
+  letter-spacing: 1px;
 }
-.score{
-  margin-top: 60px;
+
+/* Move Information */
+.js-move {
+  min-height: 25px;
+
+  font-size: 18px;
+  color: #d5d5d5;
+
+  text-align: center;
 }
-.css-score{
-  background-color: white;
+
+/* Score */
+.score {
+  margin-top: 30px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  text-align: center;
+}
+
+/* Reset Button */
+.css-score {
+  margin-top: 25px;
+
+  padding: 12px 25px;
+
+  background: white;
+  color: #191919;
+
   border: none;
+  border-radius: 8px;
+
   font-size: 15px;
-  padding: 10px 15px;
-  margin-top: 10px;
+  font-weight: bold;
+
   cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* Reset Hover */
+.css-score:hover {
+  background: #e5e5e5;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Reset Click */
+.css-score:active {
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .css-button {
+    width: 105px;
+    height: 105px;
+    margin: 5px;
+  }
+
+  .image-height {
+    width: 80px;
+    height: 80px;
+  }
+
+  .js-result {
+    font-size: 23px;
+    margin-top: 35px;
+  }
+
+  .score {
+    font-size: 18px;
+  }
 }
